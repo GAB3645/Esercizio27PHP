@@ -14,7 +14,12 @@
 $nomeOggetto = $_POST["nomeOggetto"];
 $costo = intval($_POST["costo"]);
 $quantita = $_POST["quantita"];
-$stato = $_POST["stato"];
+
+if (isset($_POST["stato"])) {  //PER RISOLVERE QUESTO ERRORE: Warning: Undefined array key "stato" on line 17 
+    $stato = $_POST["stato"];
+} else {
+    $stato = "nuovo";
+}
 $metodoDiPagamento = $_POST["metodo"];
 
 $totale = 0;
